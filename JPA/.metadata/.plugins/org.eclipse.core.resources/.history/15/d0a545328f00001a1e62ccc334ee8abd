@@ -1,0 +1,20 @@
+package com.lti.ui;
+
+import java.util.Scanner;
+
+import com.lti.service.StudentService;
+import com.lti.service.StudentServiceImpl;
+
+public class MainFinal {
+
+private static StudentService studentService = null;
+	
+	static{
+		studentService = new StudentServiceImpl();
+	}
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+
+	}
+
+}

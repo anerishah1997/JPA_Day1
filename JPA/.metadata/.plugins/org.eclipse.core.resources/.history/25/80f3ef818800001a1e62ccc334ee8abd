@@ -1,0 +1,49 @@
+package com.lti.dao;
+
+import java.util.List;
+
+import com.lti.model.Student;
+
+public class StudentDaoImpl implements StudentDao {
+
+	@Override
+	public int createStudent(Student student) {
+		return 0;
+	}
+
+	@Override
+	public Student readStudentByRollNumber(int rollNumber) {
+		return null;
+	}
+
+	@Override
+	public List<Student> readAllStudents() {
+		return null;
+	}
+
+	@Override
+	public Student updateStudent(Student student) {
+		return null;
+	}
+
+	@Override
+	public int deleteStudent(int rollNumber) {
+		return 0;
+	}
+
+	@Override
+	public void beginTransaction() {
+		
+	}
+
+	@Override
+	public void commitTransaction() {
+		
+	}
+
+	@Override
+	public void rollbackTransaction() {
+		
+	}
+
+}

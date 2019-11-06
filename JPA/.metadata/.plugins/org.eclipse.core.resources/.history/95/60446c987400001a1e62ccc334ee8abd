@@ -1,0 +1,57 @@
+package com.lti.model;
+
+public class Author {
+private String authorID;
+private String firstName;
+private String middleName;
+private String lastName;
+private String phoneno;
+public Author(String authorID, String firstName, String middleName, String lastName, String phoneno) {
+	super();
+	this.authorID = authorID;
+	this.firstName = firstName;
+	this.middleName = middleName;
+	this.lastName = lastName;
+	this.phoneno = phoneno;
+}
+public Author() {
+	super();
+}
+public String getAuthorID() {
+	return authorID;
+}
+public void setAuthorID(String authorID) {
+	this.authorID = authorID;
+}
+public String getFirstName() {
+	return firstName;
+}
+public void setFirstName(String firstName) {
+	this.firstName = firstName;
+}
+public String getMiddleName() {
+	return middleName;
+}
+public void setMiddleName(String middleName) {
+	this.middleName = middleName;
+}
+public String getLastName() {
+	return lastName;
+}
+public void setLastName(String lastName) {
+	this.lastName = lastName;
+}
+public String getPhoneno() {
+	return phoneno;
+}
+public void setPhoneno(String phoneno) {
+	this.phoneno = phoneno;
+}
+@Override
+public String toString() {
+	return "Author [authorID=" + authorID + ", firstName=" + firstName + ", middleName=" + middleName + ", lastName="
+			+ lastName + ", phoneno=" + phoneno + "]";
+}
+
+
+}

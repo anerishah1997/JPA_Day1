@@ -1,0 +1,58 @@
+package com.lti.ui;
+
+import java.util.Scanner;
+
+import com.lti.model.Student;
+import com.lti.service.StudentService;
+import com.lti.service.StudentServiceImpl;
+
+public class MainFinal {
+
+private static StudentService studentService = null;
+	
+	static{
+		studentService = new StudentServiceImpl();
+	}
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String ans;
+		int no;
+		Student student = null;
+		do {
+			
+			System.out.println("1.Add Student ");
+			System.out.println("2.Read Student By Roll Number ");
+			System.out.println("3.Modify Student");
+			System.out.println("4.Delete Student");
+			System.out.println("Pls enter your choice: ");
+			
+			no = sc.nextInt();
+			switch (no) {
+			case 1:	System.out.println("Enter Roll_Number: ");
+			        int rollno = sc.nextInt();
+			        System.out.println("Enter Name: ");
+			        String name = sc.next();
+			        System.out.println("Enter avgScore: ");
+			        double avgScore = sc.nextDouble();
+			        student = new Student(rollno, name, avgScore);
+			        boolean result = studentService.addStudent(student);
+					if(result)
+						System.out.println("Student added successfully in dB");
+					break;
+					
+			case 2: System.out.println("Enter the rollnumber of student you wanna find: ");
+			        int rno = sc.nextInt();
+			        studentService.findStudentByRollNumber(rno);
+			        
+			  
+					break;
+			default:System.out.println("Enter proper choice");
+					break;
+			}
+			System.out.println("Do you want to continue yes/no");
+			ans = sc.next();
+		} while (ans.equals("Yes") || ans.equals("y") || ans.equals("yes")||ans.equals("YES"));
+
+	}
+
+}

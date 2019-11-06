@@ -1,0 +1,26 @@
+package com.lti.ui;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
+import com.lti.model.Student;
+
+public class Main {
+
+	public static void main(String[] args) {
+
+		Student student = new Student(2,"Arpita",62.5);
+		//JPA Api
+		EntityManagerFactory factory= Persistence.createEntityManagerFactory("JPA-PU"); //used for reading persistence_unit inside persitence.xml file which contains all db connection info.
+		EntityManager entityManager=factory.createEntityManager(); // this object is used for handling lifecycle of entity. All CRUD op is performed by this object's methods.
+		entityManager.getTransaction().begin(); // for insert/update/delete we need transaction.. so open transaction
+		entityManager.persist(student); // to save student object.
+		entityManager.getTransaction().commit(); // transaction close with commit.
+		System.out.println("Student object saved");
+		Student stud1 = entityManager.find(Student.class, 1);
+		System.out.println(stud1);
+		
+	}
+
+}

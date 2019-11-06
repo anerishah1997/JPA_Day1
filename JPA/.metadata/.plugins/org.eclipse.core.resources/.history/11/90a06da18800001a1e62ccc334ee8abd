@@ -1,0 +1,60 @@
+package com.lti.dao;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+
+import com.lti.model.Student;
+import com.lti.utils.JpaUtils;
+
+public class StudentDaoImpl implements StudentDao {
+
+	private EntityManager entityManager;
+	
+	
+	
+	public StudentDaoImpl() {
+	    entityManager = JpaUtils.getEntityManager();
+	}
+
+	@Override
+	public int createStudent(Student student) {
+		return 0;
+	}
+
+	@Override
+	public Student readStudentByRollNumber(int rollNumber) {
+		return null;
+	}
+
+	@Override
+	public List<Student> readAllStudents() {
+		return null;
+	}
+
+	@Override
+	public Student updateStudent(Student student) {
+		return null;
+	}
+
+	@Override
+	public int deleteStudent(int rollNumber) {
+		return 0;
+	}
+
+	@Override
+	public void beginTransaction() {
+		
+	}
+
+	@Override
+	public void commitTransaction() {
+		
+	}
+
+	@Override
+	public void rollbackTransaction() {
+		
+	}
+
+}
